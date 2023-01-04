@@ -3,6 +3,7 @@ package com.consumingrest.restconsumingguide.service;
 import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -20,6 +21,7 @@ public class NYTimesConsumerService {
 	private static final String apiKey = "ohUkSWMUfRJ82btS9gmG4hKrPwSsMZpS";
 	
 	@Autowired
+	@Qualifier("getRestTemplate")
 	private RestTemplate restTemplate;
 	
 	public BestSellersListResponse getBestSellerList() {
